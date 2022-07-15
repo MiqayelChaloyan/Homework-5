@@ -29,6 +29,7 @@
 // }
 // console.log(countOfMissingNumbers(myArr));
 
+
 // Task - 3
 
 
@@ -94,7 +95,7 @@
 //     },
 //         sum = 0;
 //     text = text.toLowerCase();
-//     for (let i = 0; i < word.length; i++) {
+//     for (let i = 0; i < text.length; i++) {
 //         sum += alphabet[text[i]] || 0;
 //     }
 //     return sum;
