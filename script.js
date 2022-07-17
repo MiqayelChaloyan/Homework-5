@@ -3,8 +3,10 @@
 
 // const myArr = [10, 10, 3, 4, 5];
 
+
 // function getLargestMultiplication(arr) {
 //     let current, max = -Infinity;
+//     if(arr.length <= 1) return arr[0];
 //     for (let i = 0; i < arr.length - 1; i++) {
 //         current = arr[i] * arr[i + 1];
 //         if (current > max) {
@@ -22,9 +24,9 @@
 
 // const myArr = [7, 1, 9, 6, 3];
 
-// function countOfMissingNumbers(arr, min, max, count = 0) {
-//     min = Math.min(...arr);
-//     max = Math.max(...arr);
+// function countOfMissingNumbers(arr) {
+//     let min = Math.min(...arr);
+//     let max = Math.max(...arr);
 //     return (max - min + 1 - arr.length)
 // }
 // console.log(countOfMissingNumbers(myArr));
@@ -35,14 +37,26 @@
 
 // const phrase = 'Prisoner of War';
 
-// const getPhraseAcronym = (str, result = "") => {
-//     if(typeof str !== 'string') return `Invalid element - ${str}`;
-//     const arr = str.split(" ");
-//     arr.filter(el => result += el.slice(0, 1).toUpperCase());
+// const getPhraseAcronym = (str) => {
+//     let result = "";
+//     let word = `${str[0]}`;
+//     if (typeof str !== 'string') return `Invalid element - ${str}`;
+//     for (let i = 0; i < str.length - 1; i++) {
+//         if (str[i] === " ") {
+//             word += str[i + 1];
+//         }
+//     }
+//     word = word.toUpperCase();
+//     for (elem of word) {
+//         if (elem !== " ") {
+//             result += elem;
+//         }
+//     };
 //     return result;
 // }
 
 // console.log(getPhraseAcronym(phrase));
+
 
 
 // Task - 4
@@ -64,45 +78,32 @@
 // Task - 5
 
 
-// function scrabbleScore(text) {
-//     let alphabet = {
-//         a: 1,
-//         e: 1,
-//         i: 1,
-//         o: 1,
-//         u: 1,
-//         l: 1,
-//         n: 1,
-//         r: 1,
-//         s: 1,
-//         t: 1,
-//         d: 2,
-//         g: 2,
-//         b: 3,
-//         c: 3,
-//         m: 3,
-//         p: 3,
-//         f: 4,
-//         h: 4,
-//         v: 4,
-//         w: 4,
-//         y: 4,
-//         k: 5,
-//         j: 8,
-//         x: 8,
-//         q: 10,
-//         z: 10,
-//     },
-//         sum = 0;
-//     text = text.toLowerCase();
-//     for (let i = 0; i < text.length; i++) {
-//         sum += alphabet[text[i]] || 0;
+// const array = ['aeioulnrst', 'dg', 'bcmp', 'fhvwy', 'k', 'jx', 'qz'];
+
+// function is_include(elem, letters) {
+//     let score = 0;
+//     for (let i = 0; i < letters.length; i++) {
+//         for (let j = 0; j < letters[i].length; j++) {
+//             if (letters[i][j] === elem) {
+//                 score += i + 1;
+//             } else {
+//                 score += 0;
+//             }
+//         }
 //     }
-//     return sum;
+//     return score;
 // }
 
 
-// console.log(scrabbleScore('aeioulnrst'));
+// function getScrabbleScore(text, array) {
+//     let sum = 0;
+//     text = text.toLowerCase();
+//     for (let key of text) {
+//         sum += is_include(key, array);
+//     }
+//     return sum;
+// }
+// console.log(getScrabbleScore('quick', array));
 
 
 // Task - 6
